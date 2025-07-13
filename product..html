@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet">
 </head>
 <body>
+    <section class="products">
+    <div class="product-detail">
     <h1 id="product-name">Tie-Dye T-shirt</h1>
     <p id="product-description">Available in sizes S, M, L, XL, 2X.  One of a kind, hand-dyed cotton shirt.</p>
     <span id="product-price">$25</span>
 
-    <label for="size">Choose a size:</label>
-    <select id="size" name="size">
+    <label for="size-shirt">Choose a size:</label>
+    <select class="size" name="size">
         <option value="">Select a size -- </option>
         <option value="S">Small</option>
         <option value="M">Medium</option>
@@ -20,8 +24,8 @@
         <option value="2X">2X</option>
     </select>
 
-    <label for="color">Choose a color:</label>
-    <select id="color" name="color">
+    <label for="color-shirt">Choose a color:</label>
+    <select class="color" name="color">
         <option value="">Select a color -- </option>
         <option value="Red">Red and White</option>
         <option value="Blue">Blue and White</option>
@@ -29,14 +33,17 @@
         <option value="Orange">Orange and Black</option>
         <option value="Pink">Pink and Purple</option>
     </select>
-<button id="addToCart">Add To Cart!</button>
 
+<button id="addToCart">Add To Cart!</button>
+</div>
+
+<div class="product-detail">
     <h1>Macramé Potholders</h1>
     <p>These sturdy macramé potholders keep your plants suspended in style!  The pot is included.</p>
     <p>Available in a variety of colors!</p>
 
-    <label for="color">Choose a color:</label>
-    <select id="color" name="color">
+    <label for="color-potholders">Choose a color:</label>
+    <select class="color" name="color">
         <option value="">Select a color -- </option>
         <option value="Natural">Natural</option>
         <option value="Blue">Blue</option>
@@ -45,20 +52,22 @@
         <option value="Yellow">Yellow</option>
     </select>
 <button id="addToCart">Add To Cart!</button>
+</div>
 
+<div class = "product-detail">
     <h1>Paracord Bracelets</h1>
     <p>This stylish bracelet is sure to make a rugged statement.  Available in three sizes.</p>
 
-    <label for="size">Choose a size:</label>
-    <select id="size" name="size">
+    <label for="size-bracelet">Choose a size:</label>
+    <select class="size" name="size">
         <option value="">Select a size -- </option>
         <option value="S">Small</option>
         <option value="M">Medium</option>
         <option value="L">Large</option>
     </select>
 
-    <label for="color">Choose a color:</label>
-    <select id="color" name="color">
+    <label for="color-bracelet">Choose a color:</label>
+    <select class="color" name="color">
         <option value="">Select a color -- </option>
         <option value="Green">Green</option>
         <option value="Blue">Blue</option>
@@ -67,12 +76,14 @@
         <option value="Yellow">Yellow</option>
     </select>
 <button id="addToCart">Add To Cart!</button>
+</div>
 
+<div class = "product-detail">
     <h1>Macramé Keychains</h1>
     <p>This keychain is perfect for securing your keys, and its vibrant colors draw the eye well (and also help you remember where you put your keys).</p>
 
-    <label for="color">Choose a color:</label>
-    <select id="color" name="color">
+    <label for="color-keychains">Choose a color:</label>
+    <select class="color" name="color">
         <option value="">Select a color -- </option>
         <option value="Green">Green</option>
         <option value="Black">Black</option>
@@ -81,20 +92,22 @@
         <option value="Yellow">Yellow</option>
     </select>
 <button id="addToCart">Add To Cart!</button>
+</div>
 
+<div class = "product-detail">
     <h1>Dreamcatchers</h1>
     <p>These dreamcatchers are made using cotton yarn and other materials.  Available in "baby" sizes, small, medium.</p>
 
-    <label for="size">Choose a size:</label>
-    <select id="size" name="size">
+    <label for="size-dreamcatchers">Choose a size:</label>
+    <select class="size" name="size">
         <option value="">Select a size -- </option>
         <option value="B">baby</option>
-        <option value="S"><Small></Small></Small></option>
+        <option value="S"><Small></Small></option>
         <option value="M">Medium</option>
         </select>
 
-    <label for="color">Choose a color:</label>
-    <select id="color" name="color">
+    <label for="color-dreamcatchers">Choose a color:</label>
+    <select class="color" name="color">
         <option value="">Select a color -- </option>
         <option value="Green">Green</option>
         <option value="Pink">Pink</option>
@@ -102,6 +115,10 @@
         <option value="White">White</option>
         <option value="Purple">Purple</option>
     </select>
+
+    <button id="addToCart">Add To Cart!</button>
+</div>
+</section>
 <script src="product.js"></script>
 </body>
 </html>
