@@ -11,147 +11,21 @@
     <section class="products">
         <a href="cart.html">View Your Cart!</a>
     <div class="product-detail">
-    <h1 id="product-name">Tie-Dye T-shirt</h1>
-    <p id="product-description">Available in sizes S, M, L, XL, 2X.  One of a kind, hand-dyed cotton shirt.</p>
-    <span id="product-price">$25</span>
+    <h1 id="product-name">Loading...</h1>
+    <p id="product-description">Please wait...</p>
+    <span id="product-price">Nearly there...</span>
 
-    <label for="size-shirt">Choose a size:</label>
-    <select id="size-shirt" name="size">
-        <option value="">Select a size -- </option>
-        <option value="S">Small</option>
-        <option value="M">Medium</option>
-        <option value="L">Large</option>
-        <option value="XL">Extra-Large</option>
-        <option value="2X">2X</option>
-    </select>
+    <div id="size-container" style= "display: none">
+    <label for="size">Choose a size:</label>
+    <select id="size" name="size"></select>
+    </div>
 
-    <label for="color-shirt">Choose a color:</label>
-    <select id="color-shirt" name="color">
-        <option value="">Select a color -- </option>
-        <option value="Red">Red and White</option>
-        <option value="Blue">Blue and White</option>
-        <option value="Green">Green and Yellow</option>
-        <option value="Orange">Orange and Black</option>
-        <option value="Pink">Pink and Purple</option>
-    </select>
+   <div id="color-container" style= "display: none">
+    <label for="color-container">Choose a color:</label>
+    <select id="color" name="color"></select>
+    </div>
 
 <button id="addToCart">Add To Cart!</button>
-</div>
-
-<div class="product-detail">
-    <h1>Macramé Potholders</h1>
-    <p>These sturdy macramé potholders keep your plants suspended in style!  The pot is included.</p>
-    <p>Available in a variety of colors!</p>
-
-    <label for="color-pothangers">Choose a color:</label>
-    <select id="color-pothangers" name="color">
-        <option value="">Select a color -- </option>
-        <option value="Natural">Natural</option>
-        <option value="Blue">Blue</option>
-        <option value="Brown">Brown</option>
-        <option value="White">White</option>
-        <option value="Yellow">Yellow</option>
-    </select>
-<button id="addToCart">Add To Cart!</button>
-</div>
-
-<div class = "product-detail">
-    <h1>Paracord Bracelets</h1>
-    <p>This stylish bracelet is sure to make a rugged statement.  Available in three sizes.</p>
-
-    <label for="size-bracelet">Choose a size:</label>
-    <select class="size-bracelet" name="size">
-        <option value="">Select a size -- </option>
-        <option value="S">Small</option>
-        <option value="M">Medium</option>
-        <option value="L">Large</option>
-    </select>
-
-    <label for="color-bracelet">Choose a color:</label>
-    <select id="color-bracelet" name="color">
-        <option value="">Select a color -- </option>
-        <option value="Green">Green</option>
-        <option value="Blue">Blue</option>
-        <option value="Red">Red</option>
-        <option value="White">White</option>
-        <option value="Yellow">Yellow</option>
-    </select>
-<button id="addToCart">Add To Cart!</button>
-</div>
-
-<div class = "product-detail">
-    <h1>Macramé Keychains</h1>
-    <p>This keychain is perfect for securing your keys, and its vibrant colors draw the eye well (and also help you remember where you put your keys).</p>
-
-    <label for="color-keychains">Choose a color:</label>
-    <select id="color-keychains" name="color">
-        <option value="">Select a color -- </option>
-        <option value="Green">Green</option>
-        <option value="Black">Black</option>
-        <option value="Red">Red</option>
-        <option value="White">White</option>
-        <option value="Yellow">Yellow</option>
-    </select>
-<button id="addToCart">Add To Cart!</button>
-</div>
-
-<div class = "product-detail">
-    <h1>Dreamcatchers</h1>
-    <p>These dreamcatchers are made using cotton yarn and other materials.  Available in "baby" sizes, small, medium.</p>
-
-    <label for="size-dreamcatchers">Choose a size:</label>
-    <select id="size-dreamcatchers" name="size">
-        <option value="">Select a size -- </option>
-        <option value="B">baby</option>
-        <option value="S"><Small></Small></option>
-        <option value="M">Medium</option>
-        </select>
-
-    <label for="color-dreamcatchers">Choose a color:</label>
-    <select id="color-dreamcatchers" name="color">
-        <option value="">Select a color -- </option>
-        <option value="Green">Green</option>
-        <option value="Pink">Pink</option>
-        <option value="Red">Red</option>
-        <option value="White">White</option>
-        <option value="Purple">Purple</option>
-    </select>
-
-    <button id="addToCart">Add To Cart!</button>
-</div>
-
-<div class = "product-detail">
-    <h1>Potholders</h1>
-    <p>These sturdy potholders are made from 100% cotton, meaning that they are both fine and functional.</p>
-
-    <label for="color-potholders">Choose a color:</label>
-    <select id="color-potholders" name="color">
-        <option value="">Select a color -- </option>
-        <option value="Green">Green</option>
-        <option value="Pink">Pink</option>
-        <option value="Red">Red</option>
-        <option value="White">White</option>
-        <option value="Purple">Purple</option>
-    </select>
-
-    <button id="addToCart">Add To Cart!</button>
-</div>
-
-<div class = "product-detail">
-    <h1>Suncatchers</h1>
-    <p>These beaded suncatchers bring light and cheer, and the crystal upon the end reflects the sun's light.</p>
-
-    <label for="color-suncatchers">Choose a color:</label>
-    <select id="color-suncatchers" name="color">
-        <option value="">Select a color -- </option>
-        <option value="Green">Green</option>
-        <option value="Pink">Pink</option>
-        <option value="Red">Red</option>
-        <option value="White">White</option>
-        <option value="Blue">Blue</option>
-    </select>
-
-    <button id="addToCart">Add To Cart!</button>
 </div>
 </section>
 <script src="product.js"></script>
