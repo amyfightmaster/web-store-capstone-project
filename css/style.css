@@ -1,5 +1,6 @@
 body {
     background-color: #FFB5C3;
+    background-image: linear-gradient(to bottom right, #ff94a8, #932bfb);
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
     font-size: larger;
@@ -15,10 +16,10 @@ body {
 }
 
 .product-card {
-    background-color: #ffd6dd;
+    background-color: #e4b1ba;
     padding: 10px;
     border: 2px solid black;
-    border-radius: 4px;
+    border-radius: 12px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .20);
     max-width: 400px;
     justify-items: center;
@@ -28,27 +29,111 @@ body {
 .product-detail {
     display: flex;
     flex-direction: column;
-    background-color: #ffd6dd;
+    background-color: #fdbfca;
+    background-image: url("../images/gplay.png");
+    background-repeat: repeat;
     padding: 10px;
     max-width: 600px;
+    margin-bottom: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .20);
-    border: 2px solid black;
-    border-radius: 4px;
+    border: 2px dashed black;
+    border-radius: 12px;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
 #addToCart {
-    background-color: #9966cc;
+    background-color: #8a35df;
     color: white;
     font-family: "Comfortaa", cursive;
     font-size: 1rem;
     padding: 5px;
-    border: 2px solid #5c2b8e;
+    border: 4px dashed #49048f;
     border-radius: 12px;
+    cursor: pointer;
 }
 
 #addToCart hover {
-    background-color: #8e4585
+    background-color: #350a30
+}
+
+.size-shirt {
+    background-color: #f0a0af;
+    color: black;
+    font-family: "Comfortaa", cursive;
+    font-size: 1rem;
+    border-radius: 12px;
+}
+
+.color-shirt {
+    background-color: #f0a0af;
+    color: black;
+    font-family: "Comfortaa", cursive;
+    font-size: 1rem;
+    border-radius: 12px;
+}
+
+.color-pothangers {
+    background-color: #f0a0af;
+    color: black;
+    font-family: "Comfortaa", cursive;
+    font-size: 1rem;
+    border-radius: 12px;
+}
+
+.size-bracelet {
+    background-color: #f0a0af;
+    color: black;
+    font-family: "Comfortaa", cursive;
+    font-size: 1rem;
+    border-radius: 12px;
+}
+
+.color-bracelet {
+    background-color: #f0a0af;
+    color: black;
+    font-family: "Comfortaa", cursive;
+    font-size: 1rem;
+    border-radius: 12px;
+}
+
+.color.keychains {
+    background-color: #f0a0af;
+    color: black;
+    font-family: "Comfortaa", cursive;
+    font-size: 1rem;
+    border-radius: 12px;
+}
+
+.size-dreamcatchers {
+    background-color: #f0a0af;
+    color: black;
+    font-family: "Comfortaa", cursive;
+    font-size: 1rem;
+    border-radius: 12px;
+}
+
+.color-dreamcatchers {
+    background-color: #f0a0af;
+    color: black;
+    font-family: "Comfortaa", cursive;
+    font-size: 1rem;
+    border-radius: 12px;
+}
+
+.color-potholders {
+    background-color: #f0a0af;
+    color: black;
+    font-family: "Comfortaa", cursive;
+    font-size: 1rem;
+    border-radius: 12px;
+}
+
+.color-suncatchers {
+    background-color: #f0a0af;
+    color: black;
+    font-family: "Comfortaa", cursive;
+    font-size: 1rem;
+    border-radius: 12px;
 }
