@@ -180,7 +180,7 @@ function handleAddToCart() {
     let productName = document.getElementById("product-name").textContent;
     let productPrice = document.getElementById("product-price").textContent;
     let productColor = document.getElementById("color").value;
-    let productSize = document.getElementById("size") ? document.getElementById.value : null;
+    let productSize = document.getElementById("size") ? document.getElementById("size").value : null;
 
     const cartItem = {
         name: productName,
