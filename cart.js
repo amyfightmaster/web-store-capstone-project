@@ -5,7 +5,10 @@ console.log("Cart items from localStorage:", cartItems);
 
 let cartContainer = document.getElementById("cart-items");
 
-cartItems.forEach(item => {
+if (cartItems.length === 0) {
+    cartContainer.innerHTML = "<p>Your cart is currently empty.</p>"
+} else {
+    cartItems.forEach(item => {
     let itemDiv = document.createElement("div");
     itemDiv.classList.add("cart-item");
 
@@ -17,9 +20,10 @@ cartItems.forEach(item => {
     `;
 
     cartContainer.appendChild(itemDiv);
-});
+};
+}
 
-document.getElementById("clear-cart").addEventListener("click", () => { //event listener to remove stuff from cart//
+document.getElementById("clear-cart").addEventListener("click", function () { //event listener to remove stuff from cart//
     localStorage.removeItem("cart");
-    location.reload; //this reloads page, to show cleared cart//
-})
+    location.reload(); //this reloads page, to show cleared cart//
+});
