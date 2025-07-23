@@ -23,37 +23,37 @@ function validateUsername(username){
 }
 
 function validatePassword(password) {
-    const passwordRegex = /^.*(?=.{8,15})(?=.*[a-zA-Z]).*$/  //regex to determine password requirements//
+    const passwordRegex = /^.*(?=.{6,})(?=.*[a-zA-Z]).*$/  //regex to determine password requirements//
     return passwordRegex.test(password);
 }
 
+loginForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-loginForm.addEventListener("submit", submitLogin);
-
-function submitLogin(event) {
-    event.preventDefault();        //stops form from reloading//
-    console.log("Checking to see if submitLogin function running.")
     const username = usernameInput.value;
     const password = passwordInput.value;
 
-    const validUsername = validateUsername(username);
-    const validPassword = validatePassword(password);
+    try {                                  //try-catch block to hopefully catch any sneaky errors//
+        const response = await fetch('http://127.0.0.1:3000/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username, password })
+        });
 
-    if (!validUsername) {
-        alert("That's an invalid username! The username needs to be 2-15 characters. Letters, numbers, and underscores are allowed!")
-        return;
-    } 
+        if (!response.ok) {
+            throw new Error(`Server error: ${response.status}`);
+        }
 
-     if (!validPassword) {
-        alert("That's an invalid password! The password needs to be 8-15 characters. It's got to include at least one number, one special character, and one uppercase and lowercase letter.  Let's make this password as strong as a macramé knot!")
-            return;
-    } 
+        const data = await response.text(); 
+        alert(data);
+    } catch (error) {
+        console.error('Login failed:', error);
+        alert('Something went wrong. Please try again.');
+    }
+});
 
-    alert("Hooray!  You logged in successfully!")  //both useraname and password valid//
-    loginForm.reset()  //resets login form, could be handy//
-}
-
-fetch('https://dummyjson.com/user/login', {
+//this section used for dummy users pulled from dummyJSON API//
+fetch('https://dummyjson.com/user/login', {                
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -64,4 +64,4 @@ fetch('https://dummyjson.com/user/login', {
     }),
 })
 .then(res => res.json())
-.then(console.log);
+.then((json) => console.log(json));

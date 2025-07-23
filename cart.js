@@ -8,7 +8,7 @@ let cartContainer = document.getElementById("cart-items");
 if (cartItems.length === 0) {
     cartContainer.innerHTML = "<p>Your cart is currently empty.</p>"
 } else {
-    cartItems.forEach(item => {
+    cartItems.forEach((item) => {
     let itemDiv = document.createElement("div");
     itemDiv.classList.add("cart-item");
 
@@ -17,10 +17,10 @@ if (cartItems.length === 0) {
         <p>Price: ${item.price}</p>
         ${item.size ? `<p>Size: ${item.size}</p>` : ""}
         ${item.color ? `<p>Color: ${item.color}</p>` : ""}
-    `;
+    `
 
     cartContainer.appendChild(itemDiv);
-};
+});
 }
 
 document.getElementById("clear-cart").addEventListener("click", function () { //event listener to remove stuff from cart//
