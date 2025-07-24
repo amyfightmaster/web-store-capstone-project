@@ -55,7 +55,7 @@ function validateEmail(email) {
 
 function validateStreetAddress(streetAddress) {
     const addressRegex = /^\d+\s[\w\s.-]+$/;
-    return addressRegex.test(address);
+    return addressRegex.test(streetAddress);
 }
 
 function validateCity(city) {
@@ -63,13 +63,13 @@ function validateCity(city) {
     return cityRegex.test(city);
 }
 
-function validateStateRegex(state) {
+function validateState(state) {
     const stateRegex = /^[A-Z]{2}/;  //2 capital letter state abbreviation//
     return stateRegex.test(state);
 }
 
 function validatePostalCode(postalCode) {
-    const postalCodeRegex = /^\d{16}$|^\d{4}-\d{4}-\d{4}-\d{4}$/;  //dashes can be used or not//
+    const postalCodeRegex = /^\d{5}(-\d{4})?$/;  //dashes can be used or not//
     return postalCodeRegex.test(postalCode);
 }
 
@@ -81,6 +81,7 @@ function validateBankCard(bankCard) {
 checkOutForm.addEventListener ("submit", checkOutFormSubmit)
 
 function checkOutFormSubmit(event) {
+    console.log("Checkout form listener attached", checkOutForm)
     event.preventDefault();                           //this stops form from submitting automatically//
     const firstNameValue = firstName.value;
     const lastNameValue = lastName.value;
@@ -133,14 +134,14 @@ function checkOutFormSubmit(event) {
         isValid = false;
     }
 
-    if (isValid) {
+    if (isValid == true) {
         alert("Thank you for 'checking out'!  Your order has been placed!");
         localStorage.removeItem("cart");
         checkOutForm.reset();
     }
 }
 
-fetch("https://dummyjson.com/users/1")
+fetch("https://dummyjson.com/users/1") //this needs to be outside function otherwise it'll call every time which is not great//
 .then((res) => res.json())
 .then((data) => {
     console.log("Showing up!");
