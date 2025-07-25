@@ -1,6 +1,7 @@
 console.log("cart.js is loaded!  Yay!")
 
 let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
 console.log("Cart items from localStorage:", cartItems);
 
 let cartContainer = document.getElementById("cart-items");
@@ -17,6 +18,7 @@ if (cartItems.length === 0) {
         <p>Price: ${item.price}</p>
         ${item.size ? `<p>Size: ${item.size}</p>` : ""}
         ${item.color ? `<p>Color: ${item.color}</p>` : ""}
+        <p>Quantity: ${item.quantity}</p>
     `
 
     cartContainer.appendChild(itemDiv);
@@ -156,4 +158,3 @@ fetch("https://dummyjson.com/users/1") //this needs to be outside function other
         postalCode.value = data.address.postalCode || "";
     }
 });
-

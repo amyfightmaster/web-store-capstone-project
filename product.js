@@ -1,5 +1,18 @@
 console.log("JS file connected!");
 
+const plusButton = document.querySelector(".plus-button");
+const minusButton = document.querySelector(".minus-button");
+const quantityInput = document.getElementById("quantity-input");
+const addToCart = document.getElementById("addToCart");
+const sizeSelect = document.getElementById("size");
+const colorSelect = document.getElementById("color");
+
+console.log({ sizeSelect, colorSelect, quantityInput });
+
+  const size     = sizeSelect  ? sizeSelect.value  : null;
+  const color    = colorSelect ? colorSelect.value : null;
+  const quantity = quantityInput   ? parseInt(quantityInput.value, 10) : 1;
+
 const params = new URLSearchParams(window.location.search);
 const productId = params.get("id");
 console.log("Product ID:", productId);
@@ -16,16 +29,12 @@ if (productId === "1") {
     document.getElementById("size-container").style.display = "block";
     document.getElementById("color-container").style.display = "block";
 
-    const sizeSelect = document.getElementById("size");
-
     sizes.forEach(size =>{
         const option = document.createElement("option");
         option.value = size;
         option.textContent = size;
         sizeSelect.appendChild(option);
     });
-
-    const colorSelect = document.getElementById("color");
 
     colors.forEach(color =>{
         const option = document.createElement("option");
@@ -95,8 +104,6 @@ if (productId === "4") {
         sizeSelect.appendChild(option);
     });
 
-    const colorSelect = document.getElementById("color");
-
     colors.forEach(color =>{
         const option = document.createElement("option");
         option.value = color;
@@ -117,16 +124,12 @@ if (productId === "5") {
     document.getElementById("size-container").style.display = "block";
     document.getElementById("color-container").style.display = "block";
 
-    const sizeSelect = document.getElementById("size");
-
     sizes.forEach(size =>{
         const option = document.createElement("option");
         option.value = size;
         option.textContent = size;
         sizeSelect.appendChild(option);
     });
-
-    const colorSelect = document.getElementById("color");
 
     colors.forEach(color =>{
         const option = document.createElement("option");
@@ -146,7 +149,6 @@ if (productId === "6") {
 
   document.getElementById("color-container").style.display = "block";
 
-    const colorSelect = document.getElementById("color");
 
     colors.forEach(color =>{
         const option = document.createElement("option");
@@ -164,8 +166,6 @@ if (productId === "7") {
 
    document.getElementById("color-container").style.display = "block";
 
-   const colorSelect = document.getElementById("color");
-
    colors.forEach(color =>{
         const option = document.createElement("option");
         option.value = color;
@@ -174,6 +174,24 @@ if (productId === "7") {
     });
 }
 
+plusButton.addEventListener("click", increaseQuantity);
+
+function increaseQuantity() {
+    let current = parseInt(quantityInput.value, 10);
+    quantityInput.value = current + 1;
+}
+
+minusButton.addEventListener("click", decreaseQuantity);
+
+function decreaseQuantity() {
+    let current = parseInt(quantityInput.value, 10);
+    if (current > 1) {
+         quantityInput.value = current - 1;
+    }
+}
+
+
+
 function handleAddToCart() {
     console.log("Button clicked!");
     
@@ -181,25 +199,35 @@ function handleAddToCart() {
     let productPrice = document.getElementById("product-price").textContent;
     let productColor = document.getElementById("color").value;
     let productSize = document.getElementById("size") ? document.getElementById("size").value : null;
+    let productQuantity = document.getElementById("quantity-input").value
 
     const cartItem = {
         name: productName,
         price: productPrice,
         color: productColor,
-        size: productSize
+        size: productSize,
+        quantity: productQuantity
     };
 
     console.log(cartItem);
-
+    
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.push(cartItem);
+    let match = cart.find(item => 
+        item.name === cartItem.name &&
+        item.size === cartItem.size &&
+        item.color === cartItem.color
+    );
+
+    if (match) {
+        match.quantity += Number(match.quantity);
+    } else {
+         cart.push(cartItem);
+    }
+
     localStorage.setItem("cart", JSON.stringify(cart));
     console.log("Cart Updated: !", cart);
+};
 
-}
+document.getElementById("addToCart");
 
-const addToCartButton = document.getElementById("addToCart");
-
-if (addToCartButton) {
-    addToCartButton.addEventListener("click", handleAddToCart);
-}
+addToCart.addEventListener("click", handleAddToCart);
