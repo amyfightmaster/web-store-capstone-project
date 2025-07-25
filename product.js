@@ -1,5 +1,7 @@
-console.log("JS file connected!");
+console.log("JS file connected!");  
 
+
+//variables for quantity buttons, add to cart, and size and color drop-downs//
 const plusButton = document.querySelector(".plus-button");
 const minusButton = document.querySelector(".minus-button");
 const quantityInput = document.getElementById("quantity-input");
@@ -7,12 +9,17 @@ const addToCart = document.getElementById("addToCart");
 const sizeSelect = document.getElementById("size");
 const colorSelect = document.getElementById("color");
 
+//user not logged in yet, should display guest status and also disable 'add to cart' button//
+let isLoggedIn = false;
+document.getElementById("greeting").textContent = `Hello, Guest!  Please log in!`;
+addToCart.disabled = true;
+
 console.log({ sizeSelect, colorSelect, quantityInput });
+ const size     = sizeSelect  ? sizeSelect.value  : null;
+ const color    = colorSelect ? colorSelect.value : null;
+ const quantity = quantityInput   ? parseInt(quantityInput.value, 10) : 1;
 
-  const size     = sizeSelect  ? sizeSelect.value  : null;
-  const color    = colorSelect ? colorSelect.value : null;
-  const quantity = quantityInput   ? parseInt(quantityInput.value, 10) : 1;
-
+//getting product ID for product user clicked on and displaying info, including name, description, price, etc.// 
 const params = new URLSearchParams(window.location.search);
 const productId = params.get("id");
 console.log("Product ID:", productId);
@@ -174,6 +181,7 @@ if (productId === "7") {
     });
 }
 
+//event listener and function to increase quantity by 1//
 plusButton.addEventListener("click", increaseQuantity);
 
 function increaseQuantity() {
@@ -181,6 +189,7 @@ function increaseQuantity() {
     quantityInput.value = current + 1;
 }
 
+//event listener and function to decrease quantity by 1//
 minusButton.addEventListener("click", decreaseQuantity);
 
 function decreaseQuantity() {
@@ -191,7 +200,7 @@ function decreaseQuantity() {
 }
 
 
-
+//event listener and function to handle adding to cart. This needed major tinkering to get quantity working right.  At first, was always pushing a new item.//
 function handleAddToCart() {
     console.log("Button clicked!");
     

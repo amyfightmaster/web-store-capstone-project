@@ -2,6 +2,9 @@ const showLoginButton = document.getElementById("showLogin");
 
 const loginContainer = document.getElementById("login-container");
 
+let isLoggedIn = false;
+document.getElementById("greeting").textContent = `Hello, Guest!  Please log in!`;
+
 showLoginButton.addEventListener("click", showLogin);
 
 function showLogin() {
@@ -62,6 +65,8 @@ fetch('https://dummyjson.com/user/login', {
         password: 'emilyspass',
         expiresInMins: 30,
     }),
+    isLoggedIn = true;
+    document.getElementById("greeting").textContent = "Hello, ${data.username}!  Good to see you again!"
 })
 .then(res => res.json())
 .then((json) => console.log(json));
