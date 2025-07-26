@@ -1,9 +1,18 @@
 const showLoginButton = document.getElementById("showLogin");
-
 const loginContainer = document.getElementById("login-container");
+const loginForm = document.getElementById("login-form");
+const usernameInput = document.getElementById("username");
+const passwordInput = document.getElementById("password");
+const greeting = document.getElementById("greeting");
 
-let isLoggedIn = false;
-document.getElementById("greeting").textContent = `Hello, Guest!  Please log in!`;
+let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+let user = JSON.parse(localStorage.getItem("user")) || null; 
+
+if (isLoggedIn && user) {
+    greeting.textContent = `Hello, ${user.username}!  Good to see you again!`;
+} else {
+    greeting.textContent = `Hello, Guest!  Please log in!`;
+}
 
 showLoginButton.addEventListener("click", showLogin);
 
@@ -14,11 +23,6 @@ function showLogin() {
         loginContainer.style.display = "block";
     }
 }
-
-
-const loginForm = document.getElementById("login-form");
-const usernameInput = document.getElementById("username");
-const passwordInput = document.getElementById("password");
 
 function validateUsername(username){
     const usernameRegex = /^[a-zA-Z0-9_]{2,15}$/;  //regex to determine username requirements //
@@ -47,26 +51,18 @@ loginForm.addEventListener("submit", async function (e) {
             throw new Error(`Server error: ${response.status}`);
         }
 
-        const data = await response.text(); 
-        alert(data);
+        const data = await response.json();
+
+        if (data.success) {
+            localStorage.setItem("isLoggedIn", "true");
+            localStorage.setItem("user", JSON.stringify({ username }));
+            greeting.textContent = `Hello, ${username}!  Good to see you again!`;
+        } else {
+            alert("Login failed!")
+        }
     } catch (error) {
-        console.error('Login failed:', error);
-        alert('Something went wrong. Please try again.');
+        console.error(error);
+        alert('It looks like something went wrong. Please try again.');
     }
 });
 
-//this section used for dummy users pulled from dummyJSON API//
-fetch('https://dummyjson.com/user/login', {                
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-
-        username: 'emilys',
-        password: 'emilyspass',
-        expiresInMins: 30,
-    }),
-    isLoggedIn = true;
-    document.getElementById("greeting").textContent = "Hello, ${data.username}!  Good to see you again!"
-})
-.then(res => res.json())
-.then((json) => console.log(json));

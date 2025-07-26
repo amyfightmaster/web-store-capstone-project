@@ -22,8 +22,8 @@ app.post('/login', (req, res) => {
     const password = req.body.password;
 
     if (username === 'emilys' && password === 'emilyspass') {
-        res.send('Login successful');
+        res.json({ success: true, username: username });
     } else {
-        res.send('Login failed!')
+        res.json({ success: false, message: 'Login failed!' })
     }
 });
