@@ -1,23 +1,41 @@
 console.log("JS file connected!");  
 
-
-//variables for quantity buttons, add to cart, and size and color drop-downs//
+//variables for greeting, quantity buttons, add to cart, and size and color drop-downs//
+const greeting = document.getElementById("greeting");
 const plusButton = document.querySelector(".plus-button");
 const minusButton = document.querySelector(".minus-button");
 const quantityInput = document.getElementById("quantity-input");
-const addToCart = document.getElementById("addToCart");
+const addToCart = document.getElementById("addToCartButton");
 const sizeSelect = document.getElementById("size");
 const colorSelect = document.getElementById("color");
 
-//user not logged in yet, should display guest status and also disable 'add to cart' button//
-let isLoggedIn = false;
-document.getElementById("greeting").textContent = `Hello, Guest!  Please log in!`;
-addToCart.disabled = true;
+let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+let user = JSON.parse(localStorage.getItem("user")) || null; 
+
+if (isLoggedIn && user) {
+    greeting.textContent = `Hello, ${user.username}!  Good to see you again!`;
+} else {
+    greeting.textContent = `Hello, Guest!  Please log in!`;
+}
+
+    if (isLoggedIn && user) {
+    greeting.textContent = `Hello, ${user.username}!  Good to see you again!`;
+} else {
+    greeting.textContent = `Hello, Guest!  Please log in!`;
+}
+
+//disabling add to cart button when user is not logged in//
+
+if (!isLoggedIn && addToCartButton) {
+    addToCartButton.disabled = true;
+}
+
 
 console.log({ sizeSelect, colorSelect, quantityInput });
  const size     = sizeSelect  ? sizeSelect.value  : null;
  const color    = colorSelect ? colorSelect.value : null;
  const quantity = quantityInput   ? parseInt(quantityInput.value, 10) : 1;
+
 
 //getting product ID for product user clicked on and displaying info, including name, description, price, etc.// 
 const params = new URLSearchParams(window.location.search);
@@ -239,4 +257,4 @@ function handleAddToCart() {
 
 document.getElementById("addToCart");
 
-addToCart.addEventListener("click", handleAddToCart);
+addToCartButton.addEventListener("click", handleAddToCart);
