@@ -1,4 +1,4 @@
-const showLoginButton = document.getElementById("showLogin");
+const loginButton = document.getElementById("loginButton");
 const loginContainer = document.getElementById("login-container");
 const loginForm = document.getElementById("login-form");
 const usernameInput = document.getElementById("username");
@@ -10,11 +10,13 @@ let user = JSON.parse(localStorage.getItem("user")) || null;
 
 if (isLoggedIn && user) {
     greeting.textContent = `Hello, ${user.username}!  Good to see you again!`;
+    loginButton.style.display = "none";
 } else {
     greeting.textContent = `Hello, Guest!  Please log in!`;
+    loginButton.style.display = "block";
 }
 
-showLoginButton.addEventListener("click", showLogin);
+loginButton.addEventListener("click", showLogin);
 
 function showLogin() {
     if (loginContainer.style.display !== "none") {
