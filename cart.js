@@ -5,6 +5,7 @@ let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
 console.log("Cart items from localStorage:", cartItems);
 
 let cartContainer = document.getElementById("cart-items");
+let grandTotal = 0;
 
 if (cartItems.length === 0) {
     cartContainer.innerHTML = "<p>Your cart is currently empty.</p>"
@@ -19,11 +20,24 @@ if (cartItems.length === 0) {
         ${item.size ? `<p>Size: ${item.size}</p>` : ""}
         ${item.color ? `<p>Color: ${item.color}</p>` : ""}
         <p>Quantity: ${item.quantity}</p>
+        
     `
-
     cartContainer.appendChild(itemDiv);
 });
 }
+
+cartItems.forEach((item) => {
+    grandTotal += Number(item.quantity) * Number(item.price);
+});
+
+let finalTotal = grandTotal + (grandTotal * .07);
+
+let totalDiv = document.createElement("div");
+totalDiv.classList.add("cart-total");
+totalDiv.innerHTML = `
+<p>Final price, with tax: $${finalTotal.toFixed(2)}</p>
+`;
+cartContainer.appendChild(totalDiv);
 
 document.getElementById("clear-cart").addEventListener("click", function () { //event listener to remove stuff from cart//
     localStorage.removeItem("cart");

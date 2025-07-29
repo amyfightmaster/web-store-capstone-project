@@ -223,7 +223,7 @@ function handleAddToCart() {
     console.log("Button clicked!");
     
     let productName = document.getElementById("product-name").textContent;
-    let productPrice = document.getElementById("product-price").textContent;
+    let productPrice = parseFloat(document.getElementById("product-price").textContent.replace("$", ""));
     let productColor = document.getElementById("color").value;
     let productSize = document.getElementById("size") ? document.getElementById("size").value : null;
     let productQuantity = document.getElementById("quantity-input").value
@@ -246,7 +246,7 @@ function handleAddToCart() {
     );
 
     if (match) {
-        match.quantity += Number(match.quantity);
+        match.quantity = Number(match.quantity) + Number(productQuantity);
     } else {
          cart.push(cartItem);
     }
