@@ -44,6 +44,8 @@ document.getElementById("clear-cart").addEventListener("click", function () { //
     location.reload(); //this reloads page, to show cleared cart//
 });
 
+
+//variables for checkout form//
 const checkOutForm = document.getElementById("check-outform");
 const firstName = document.getElementById("first-name");
 const lastName = document.getElementById("last-name");
@@ -54,6 +56,7 @@ const state = document.getElementById("state");
 const postalCode = document.getElementById("postalCode");
 const bankCard = document.getElementById("bankCard");
 
+//regex to validate checkout orm info//
 function validateFirstName(firstName) {
     const firstNameRegex = /[a-zA-Z]/;
     return firstNameRegex.test(firstName);  
@@ -94,6 +97,7 @@ function validateBankCard(bankCard) {
     return bankCardRegex.test(bankCard);
 }
 
+//event listener to submit checkout form//
 checkOutForm.addEventListener ("submit", checkOutFormSubmit)
 
 function checkOutFormSubmit(event) {
@@ -157,18 +161,21 @@ function checkOutFormSubmit(event) {
     }
 }
 
+//fetching dummy user data to use, but user needs to actually input that data. autofill felt not great--it isn't interactive.  use tooltips to indicate info that should be typed in.//
+
+let userData = {};
+
 fetch("https://dummyjson.com/users/1") //this needs to be outside function otherwise it'll call every time which is not great//
 .then((res) => res.json())
 .then((data) => {
-    console.log("Showing up!");
-    firstName.value = data.firstName;
-    lastName.value = data.lastName;
-    email.value = data.email;
-
-    if (data.address) {
-        streetAddress.value = data.address.address || "";
-        city.value = data.address.city || "";
-        state.value = data.address.state || "";
-        postalCode.value = data.address.postalCode || "";
+    userData = {
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        address: data.address.address,
+        city: data.address.city, 
+        state: data.address.state,
+        postalCode: data.address.postalCode,
+        bankCard: data.bank.cardNumber
     }
 });
