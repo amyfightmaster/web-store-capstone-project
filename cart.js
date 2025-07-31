@@ -58,17 +58,17 @@ const bankCard = document.getElementById("bankCard");
 
 //regex to validate checkout orm info//
 function validateFirstName(firstName) {
-    const firstNameRegex = /[a-zA-Z]/;
+    const firstNameRegex = /[a-zA-Z]/;  //allows only capital and lowercase letters//
     return firstNameRegex.test(firstName);  
 }
 
 function validateLastName(lastName) {
-    const lastNameRegex = /[a-zA-Z]/;
+    const lastNameRegex = /[a-zA-Z]/;  //allows only capital and lowercase letters//
     return lastNameRegex.test(lastName);
 }
 
 function validateEmail(email) {
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;  //allows capital and lowercase letters, numbers, certain special characters, the @ symbol. the stuff you'd expect an email to have//
     return emailRegex.test(email);
 }
 
@@ -93,7 +93,7 @@ function validatePostalCode(postalCode) {
 }
 
 function validateBankCard(bankCard) {
-    const bankCardRegex = /^\d{16}$|^\d{4}-\d{4}-\d{4}-\d{4}$/;
+    const bankCardRegex = /^\d{16}$|^\d{4}-\d{4}-\d{4}-\d{4}$/;  //allows either card number with no dashes or with dashes//
     return bankCardRegex.test(bankCard);
 }
 
