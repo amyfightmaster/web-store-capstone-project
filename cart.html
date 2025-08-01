@@ -22,14 +22,78 @@
 
     <section id="check-outform-container">
         <form id="check-outform">
-            <label for="first-name">First Name:</label> <input id="first-name" type="text" required/> 
-            <label for="last-name">Last Name:</label> <input id="last-name" type="text" required/> 
-            <label for="email">Email:</label> <input id="email" type="text" required/>
-            <label for="streetAddress">Street Address:</label> <input id="streetAddress" type="text" required/> 
-            <label for="city">City:</label> <input id="city" type="text" required/> 
-            <label for="state">State:</label> <input id="state" type="text" required/> 
-            <label for="postalCode">Zip Code:</label> <input id="postalCode" type="text" required/>
-            <label for="bankCard">Credit Card Number:</label> <input id="bankCard" type="text" required/>
+            <div class="form-container">
+                <div class="label-with-tooltip">
+                <label for="first-name">First Name:</label> 
+                <div class="tooltip">?
+                    <span class="tooltiptext"> Emily</span>
+            </div>
+            <input id="first-name" type="text" required/>
+        </div>
+        </div>
+            <div class="form-container">
+                <div class="label-with-tooltip">
+                <label for="last-name">Last Name:</label>
+                <div class="tooltip">? 
+                    <span class="tooltiptext">Johnson</span>
+            </div>
+                <input id="last-name" type="text" required/>
+            </div>
+        </div>
+            <div class="form-container">
+                <div class="label-with-tooltip">
+                <label for="email">Email:</label> 
+                <div class="tooltip">?
+                    <span class="tooltiptext">Try entering emily.johnson@x.dummyjson.com</span>
+            </div>
+                <input id="email" type="text" required/>
+            </div>
+        </div>    
+         <div class="form-container">
+                <div class="label-with-tooltip">
+                <label for="streetAddress">Street Address:</label> 
+                <div class="tooltip">?
+                    <span class="tooltiptext">Try entering 626 Main Street</span>
+            </div>
+                <input id="streetAddress" type="text" required/> 
+            </div>
+        </div>    
+        <div class="form-container">
+                <div class="label-with-tooltip">
+                <label for="city">City:</label>
+                <div class="tooltip">?
+                    <span class="tooltiptext">Try entering Phoenix</span>
+            </div>
+                <input id="city" type="text" required/> 
+            </div>
+        </div>   
+        <div class="form-container">
+                <div class="label-with-tooltip">
+                <label for="state">State:</label>
+                <div class="tooltip">?
+                    <span class="tooltiptext">Try entering MS</span>
+            </div>
+                <input id="state" type="text" required/> 
+            </div>
+        </div>
+        <div class="form-container">
+                <div class="label-with-tooltip">
+                <label for="postalCode">Zip Code:</label>
+                <div class="tooltip">?
+                    <span class="tooltiptext">Try entering 29112</span>
+            </div>
+                <input id="postalCode" type="text" required/>
+        </div>
+    </div>
+        <div class="form-container">
+                <div class="label-with-tooltip">
+                <label for="bankCard">Credit Card Number:</label>
+                <div class="tooltip">?
+                    <span class="tooltiptext">Try entering 9289760655481815</span>
+            </div>
+                <input id="bankCard" type="text" required/>
+        </div>
+    </div>
             <button id="checkoutbutton">Check Out</button>
         </form>
     </section>
