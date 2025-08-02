@@ -46,6 +46,7 @@ const params = new URLSearchParams(window.location.search);
 const productId = params.get("id");
 console.log("Product ID:", productId);
 
+//only displays specific product and relevant information based on which product card user clicked on index.html//
 if (productId === "1") {
 
     const sizes = ["S", "M", "L", "XL", "2X"];

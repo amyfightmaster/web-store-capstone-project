@@ -1,4 +1,5 @@
 const loginButton = document.getElementById("loginButton");
+const logoutButton = document.getElementById("logout")
 const loginContainer = document.getElementById("login-container");
 const loginForm = document.getElementById("login-form");
 const usernameInput = document.getElementById("username");
@@ -8,12 +9,15 @@ const greeting = document.getElementById("greeting");
 let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 let user = JSON.parse(localStorage.getItem("user")) || null; 
 
+//shows/hides login button and changes greeting based on whether user is logged in or guest//
 if (isLoggedIn && user) {
     greeting.textContent = `Hello, ${user.username}!  Good to see you again!`;
     loginButton.style.display = "none";
+    logoutButton.style.display = "block";
 } else {
     greeting.textContent = `Hello, Guest!  Please log in!`;
     loginButton.style.display = "block";
+    logoutButton.style.display = "none";
 }
 
 loginButton.addEventListener("click", showLogin);
@@ -24,6 +28,17 @@ function showLogin() {
     } else {
         loginContainer.style.display = "block";
     }
+}
+
+logoutButton.addEventListener("click", logoutUser);
+
+function logoutUser() {
+        localStorage.removeItem("isLoggedIn");
+        localStorage.removeItem("user");
+
+        greeting.textContent = `Hello, Guest!  Please log in!`;
+        loginButton.style.display = "block";
+        logoutButton.style.display = "none";
 }
 
 function validateUsername(username){
@@ -37,7 +52,7 @@ function validatePassword(password) {
 }
 
 loginForm.addEventListener("submit", async function (e) {
-    e.preventDefault();
+    e.preventDefault();                //keeps form from reloading//
 
     const username = usernameInput.value;
     const password = passwordInput.value;

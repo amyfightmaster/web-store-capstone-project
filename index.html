@@ -11,22 +11,32 @@
     <header>
         Logo
        
-<p id="greeting">Hello, Guest!  Please log in!</p>
+<p id="greeting">Hello, Guest!  Please log in!</p>  
             
 <button id="loginButton">Log In!</button>
+<button id="logout">Log Out</button>
     </header>
 
     <div id="login-container" style="display:none;">
         <h2>Log In Here!</h2>
         <form id="login-form">
-            <label for="username">Username</label>
+            <div class="label-with-tooltip">
+                <label for="username">Username</label>
+                <div class="tooltip">?
+                    <span class="tooltiptext">Try emilys</span>
+            </div>
             <input id="username" type="text" required/>
-
-            <label for="password">Password</label>
+        </div>
+        
+            <div class="label-with-tooltip">
+                <label for="password">Password</label>
+                <div class="tooltip">?
+                    <span class="tooltiptext">Try emilyspass</span>
+            </div>
             <input id="password" type="text" required/>
+        </div>
 
-            <button type="submit">Log In</button>
-            <button type="button" id="login-cancel">Cancel Log In</button>
+            <button id="submitlogin">Log In</button>
         </form>
     </div>
 

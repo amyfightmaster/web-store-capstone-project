@@ -22,6 +22,62 @@ body {
     font-size: larger;
 }
 
+#logout {
+    background-color: #8a35df;
+    color: white;
+    font-family: "Comfortaa", cursive;
+    font-size: 1rem;
+    padding: 5px;
+    border: 4px dashed #49048f;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+#loginButton {
+    background-color: #8a35df;
+    color: white;
+    font-family: "Comfortaa", cursive;
+    font-size: 1rem;
+    padding: 5px;
+    border: 4px dashed #49048f;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+#login-container {
+    background-color: #fdbfca;
+    background-image: url("../images/gplay.png");
+    background-repeat: repeat;
+    font-family: 'Quicksand', sans-serif;
+    padding: 10px;
+    border: 4px dashed #f95775;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .20);
+    justify-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+#username, #password {
+    background-color: #f0a0af;
+    color: black;
+    font-family: "Comfortaa", cursive;
+    font-size: 1rem;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+#submitlogin {
+    background-color: #8a35df;
+    color: white;
+    font-family: "Comfortaa", cursive;
+    font-size: 1rem;
+    padding: 5px;
+    border: 4px dashed #49048f;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
 #products {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -88,7 +144,7 @@ body {
 }
 
 
-#size {
+#size, #color {
     background-color: #f0a0af;
     color: black;
     font-family: "Comfortaa", cursive;
@@ -97,16 +153,7 @@ body {
     margin-bottom: 10px;
 }
 
-#color {
-    background-color: #f0a0af;
-    color: black;
-    font-family: "Comfortaa", cursive;
-    font-size: 1rem;
-    border-radius: 12px;
-    margin: 10px;
-}
-
-.minus-button {
+.minus-button, .plus-button {
     background-color: #861fed;
     color: white;
     font-family: "Comfortaa", cursive;
@@ -123,17 +170,6 @@ body {
     font-family: "Comfortaa", cursive;
     font-size: 1rem;
     border-radius: 12px;
-}
-
-.plus-button {
-    background-color: #861fed;
-    color: white;
-    font-family: "Comfortaa", cursive;
-    font-size: 1rem;
-    padding: 5px;
-    border: 4px dashed #49048f;
-    border-radius: 12px;
-    cursor: pointer;
 }
 
 #cart-items {
@@ -299,6 +335,7 @@ body {
   color: black;
   text-align: center;
   padding: 5px 0;
+  border: 2px dashed #f95775;
   border-radius: 6px;
   position: absolute;
   z-index: 1;
@@ -348,6 +385,7 @@ body {
    width: 50px;
    font-size: 1rem;
    padding: 5px;
+   height: 10vw;
 }
 
 #cart-items {
@@ -362,10 +400,11 @@ body {
 }
 
 .minus-button, .plus-button {
-    font-size: 1rem;
+    font-size: 1.5rem;
     padding: 4px;
-    width: 6vw;
+    width: 15vw;
     margin-top: 5px;
+    border-radius: 20px;
 }
 
 #color, #size {
@@ -373,7 +412,7 @@ body {
     color: black;
     font-family: "Comfortaa", cursive;
     font-size: 1rem;
-    border-radius: 12px;
+    border-radius: 14px;
     margin-bottom: 5px;
 }
 
