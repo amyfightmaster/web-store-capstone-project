@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", function () {
+
 console.log("JS file connected!");  
 
 //variables for greeting, quantity buttons, add to cart, and size and color drop-downs//
@@ -5,30 +7,32 @@ const greeting = document.getElementById("greeting");
 const plusButton = document.querySelector(".plus-button");
 const minusButton = document.querySelector(".minus-button");
 const quantityInput = document.getElementById("quantity-input");
-const addToCart = document.getElementById("addToCartButton");
+const addToCartButton = document.getElementById("addToCartButton");
 const sizeSelect = document.getElementById("size");
 const colorSelect = document.getElementById("color");
 
 let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 let user = JSON.parse(localStorage.getItem("user")) || null; 
 
-if (isLoggedIn && user) {
-    greeting.textContent = `Hello, ${user.username}!  Good to see you again!`;
-} else {
-    greeting.textContent = `Hello, Guest!  Please log in!`;
-}
 
+if (greeting) {
     if (isLoggedIn && user) {
     greeting.textContent = `Hello, ${user.username}!  Good to see you again!`;
 } else {
     greeting.textContent = `Hello, Guest!  Please log in!`;
 }
+}
 
 //disabling add to cart button when user is not logged in//
 
-if (!isLoggedIn && addToCartButton) {
-    addToCartButton.disabled = true;
+if (addToCartButton) {
+    addToCartButton.disabled = !isLoggedIn;
+    if (!isLoggedIn) {
+        addToCartButton.title = "Log in to add items to your cart!"
+    }
 }
+
+
 
 
 console.log({ sizeSelect, colorSelect, quantityInput });
@@ -258,3 +262,5 @@ function handleAddToCart() {
 document.getElementById("addToCart");
 
 addToCartButton.addEventListener("click", handleAddToCart);
+
+});
