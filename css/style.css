@@ -383,9 +383,9 @@ body {
 
 #quantity-input {
    width: 50px;
-   font-size: 1rem;
+   font-size: 1.3rem;
    padding: 5px;
-   height: 10vw;
+   height: fit-content;
 }
 
 #cart-items {
@@ -411,7 +411,9 @@ body {
     background-color: #f0a0af;
     color: black;
     font-family: "Comfortaa", cursive;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    width: fit-content;
+    height: fit-content;
     border-radius: 14px;
     margin-bottom: 5px;
 }

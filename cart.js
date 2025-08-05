@@ -58,12 +58,12 @@ const bankCard = document.getElementById("bankCard");
 
 //regex to validate checkout orm info//
 function validateFirstName(firstName) {
-    const firstNameRegex = /[a-zA-Z]+$/;  //allows only capital and lowercase letters//
+    const firstNameRegex = /^[A-Z][a-z]+$/;  //allows only capital and lowercase letters, with first letter being capital//
     return firstNameRegex.test(firstName);  
 }
 
 function validateLastName(lastName) {
-    const lastNameRegex = /[a-zA-Z]+$/;  //allows only capital and lowercase letters//
+    const lastNameRegex = /^[A-Z][a-z]+$/;;  //allows only capital and lowercase letters, with first letter being capital//
     return lastNameRegex.test(lastName);
 }
 

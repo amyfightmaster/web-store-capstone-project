@@ -50,7 +50,7 @@ console.log("Product ID:", productId);
 if (productId === "1") {
 
     const sizes = ["S", "M", "L", "XL", "2X"];
-    const colors = ["Red and White", "Blue and White", "Green and Yellow", "Orange and Black", "Pink and Purple"];
+    const colors = ["Red, Blue and White", "Blue and Purple", "Green, Blue and Yellow", "Orange and Black", "Yellow and Blue"];
 
     document.getElementById("product-name").textContent = "Tie-Dye T-shirt";
     document.getElementById("product-description").textContent = "Available in sizes S, M, L, XL, 2X.  One of a kind, hand-dyed cotton shirt.";
@@ -75,7 +75,7 @@ if (productId === "1") {
 }
 
 if (productId === "2") {
-    const colors = ["Natural", "Brown", "White", "Yellow", "Green", "Blue"];
+    const colors = ["Natural", "White"];
 
     document.getElementById("product-name").textContent = "Macramé Pot-hangers";
     document.getElementById("product-description").textContent = "These sturdy macramé pot-hangers keep your plants suspended in style!  The pot is included.";
@@ -95,7 +95,7 @@ if (productId === "2") {
 }
 
 if (productId === "3") {
-    const colors = ["Green", "Red", "Yellow", "Blue", "Pink", "Purple"];
+    const colors = ["Purple", "Blue and Yellow", "Light Gray", "Pink", "Pink and Blue"];
 
     document.getElementById("product-name").textContent = "Macramé Keychains";
     document.getElementById("product-description").textContent = "This keychain is perfect for securing your keys, and its vibrant colors draw the eye well (and also help you remember where you put your keys).";
@@ -116,7 +116,7 @@ if (productId === "3") {
 
 if (productId === "4") {
     const sizes = ["Small", "Medium", "Large"];
-    const colors = ["Blue", "Red", "Green", "Yellow", "Black", "White", "Purple"];
+    const colors = ["Rainbow", "Red and Black", "Sherbert", "Pastel", "Orange"];
 
     document.getElementById("product-name").textContent = "Paracord Bracelets";
     document.getElementById("product-description").textContent = "This stylish bracelet is sure to make a rugged statement.  Available in three sizes.";
@@ -144,12 +144,12 @@ if (productId === "4") {
 }
 
 if (productId === "5") {
-    const sizes = ["Baby", "Small", "Medium"];
-    const colors = ["Green", "Blue", "Red", "White", "Orange", "Pink", "Purple"];
+    const sizes = ["Baby"];
+    const colors = ["Green White and Blue", "Yellow and White", "White", "Green and Orange"];
 
     document.getElementById("product-name").textContent = "Dreamcatchers";
     document.getElementById("product-description").textContent = "These dreamcatchers are made using cotton yarn and other materials.  Available in 'baby' sizes, small, medium.";
-    document.getElementById("product-price").textContent = "$15";
+    document.getElementById("product-price").textContent = "$5";
 
     document.getElementById("size-container").style.display = "block";
     document.getElementById("color-container").style.display = "block";
@@ -171,7 +171,7 @@ if (productId === "5") {
 }
 
 if (productId === "6") {
-    const colors = ["Black and White Check", "Green", "Yellow and Blue Plaid", "Brown", "Pink and Purple Stripes"];
+    const colors = ["Tan and Brown", "Light Gray and Red", "Green and Red", "Green and Orange", "Pink and Purple"];
 
     document.getElementById("product-name").textContent = "Potholders";
     document.getElementById("product-description").textContent = "These sturdy potholders are made from 100% cotton, meaning that they are both fine and functional.";
@@ -189,7 +189,7 @@ if (productId === "6") {
 }
 
 if (productId === "7") {
-    const colors = ["Red", "Blue", "Green", "White", "Pink", "Purple"];
+    const colors = ["Yellow and Orange", "Blue", "Green", "Pink and Yellow", "Purple and Yellow"];
     document.getElementById("product-name").textContent = "Suncatchers";
     document.getElementById("product-description").textContent = "These beaded suncatchers bring light and cheer, and the crystal upon the end reflects the sun's light.";
     document.getElementById("product-price").textContent = "$15";
