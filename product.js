@@ -72,6 +72,23 @@ if (productId === "1") {
         option.textContent = color;
         colorSelect.appendChild(option);
     });
+
+    const imageURLs = [
+        "images/tiedye_tshirt_1.jpeg",
+        "images/tiedye_shirt_2.jpeg",
+        "images/tiedye_shirt_3.jpeg", 
+        "images/tiedye_shirt_4.jpeg",
+        "images/tiedye_shirt_5.jpeg"
+    ];
+
+   const container = document.getElementById("product-images-container");
+
+   imageURLs.forEach(url => {
+    const image = document.createElement("img");
+    image.src = url;
+    image.alt = "Product image";
+    container.appendChild(image);
+});
 }
 
 if (productId === "2") {
@@ -92,6 +109,20 @@ if (productId === "2") {
         colorSelect.appendChild(option);
     });
 
+
+    const imageURLs = [
+        "images/pothanger_1.jpeg",
+        "images/pothanger_2.jpeg",
+    ];
+
+   const container = document.getElementById("product-images-container");
+
+   imageURLs.forEach(url => {
+    const image = document.createElement("img");
+    image.src = url;
+    image.alt = "Product image";
+    container.appendChild(image);
+});
 }
 
 if (productId === "3") {
@@ -112,6 +143,18 @@ if (productId === "3") {
         colorSelect.appendChild(option);
     });
 
+    const imageURLs = [
+        "images/keychains_1.jpeg",
+    ];
+
+   const container = document.getElementById("product-images-container");
+
+   imageURLs.forEach(url => {
+    const image = document.createElement("img");
+    image.src = url;
+    image.alt = "Product image";
+    container.appendChild(image);
+   });
 }
 
 if (productId === "4") {
@@ -141,11 +184,24 @@ if (productId === "4") {
         colorSelect.appendChild(option);
     });
 
+       const imageURLs = [
+        "images/paracord_bracelets.jpeg",
+    ];
+
+   const container = document.getElementById("product-images-container");
+
+   imageURLs.forEach(url => {
+    const image = document.createElement("img");
+    image.src = url;
+    image.alt = "Product image";
+    container.appendChild(image);
+   });
+
 }
 
 if (productId === "5") {
     const sizes = ["Baby"];
-    const colors = ["Green White and Blue", "Yellow and White", "White", "Green and Orange"];
+    const colors = ["Green White and Blue", "Yellow and White", "White", "Green and Orange", "Green"];
 
     document.getElementById("product-name").textContent = "Dreamcatchers";
     document.getElementById("product-description").textContent = "These dreamcatchers are made using cotton yarn and other materials.  Available in 'baby' sizes, small, medium.";
@@ -168,13 +224,28 @@ if (productId === "5") {
         colorSelect.appendChild(option);
     });
 
+    const imageURLs = [
+        "images/dreamcatcher_1.jpeg",
+        "images/dreamcatcher_2.jpeg"
+    ];
+
+   const container = document.getElementById("product-images-container");
+
+   imageURLs.forEach(url => {
+    const image = document.createElement("img");
+    image.src = url;
+    image.alt = "Product image";
+    container.appendChild(image);
+   });
+
+
 }
 
 if (productId === "6") {
     const colors = ["Tan and Brown", "Light Gray and Red", "Green and Red", "Green and Orange", "Pink and Purple"];
 
     document.getElementById("product-name").textContent = "Potholders";
-    document.getElementById("product-description").textContent = "These sturdy potholders are made from 100% cotton, meaning that they are both fine and functional.";
+    document.getElementById("product-description").textContent = "These sturdy potholders are made from 100% cotton, meaning that they are both appealing and functional.";
     document.getElementById("product-price").textContent = "$15";
 
   document.getElementById("color-container").style.display = "block";
@@ -186,6 +257,21 @@ if (productId === "6") {
         option.textContent = color;
         colorSelect.appendChild(option);
     });
+
+    const imageURLs = [
+        "images/potholders_1.jpeg",
+        "images/potholders_2.jpeg",
+        "images/potholders_3.jpeg"
+    ];
+
+   const container = document.getElementById("product-images-container");
+
+   imageURLs.forEach(url => {
+    const image = document.createElement("img");
+    image.src = url;
+    image.alt = "Product image";
+    container.appendChild(image);
+   });
 }
 
 if (productId === "7") {
@@ -202,6 +288,21 @@ if (productId === "7") {
         option.textContent = color;
         colorSelect.appendChild(option);
     });
+
+    const imageURLs = [
+        "images/suncatcher.jpeg",
+        "images/suncatcher_1.jpeg",
+        "images/suncatcher_2.jpeg"
+    ];
+
+   const container = document.getElementById("product-images-container");
+
+   imageURLs.forEach(url => {
+    const image = document.createElement("img");
+    image.src = url;
+    image.alt = "Product image";
+    container.appendChild(image);
+   });
 }
 
 //event listener and function to increase quantity by 1//

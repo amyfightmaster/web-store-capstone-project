@@ -1,17 +1,18 @@
-#greeting {
+header {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background-color: #fdbfca;
     background-image: url("../images/gplay.png");
     background-repeat: repeat;
-    width: 50vw;
-    text-align: center;
-    height: 10vh;
+    align-items: center;
+    justify-content: center;
     font-family: 'Quicksand', sans-serif;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .20);
     border: 3px dashed #f95775;
     border-radius: 12px;
     margin: 0 auto; 
+    width: 30vw;
+    height: 20vh;
 }
 
 body {
@@ -92,6 +93,20 @@ body {
     align-items: center;
 }
 
+#prodcut-images-container {
+    margin: 0;
+    padding: 0;
+}
+
+#product-images-container img {
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    width: 300px;
+    display: block;
+    margin: 0 auto; 
+}
+
 .product-card {
     background-color: #fdbfca;
     background-image: url("../images/gplay.png");
@@ -100,6 +115,8 @@ body {
     border: 4px dashed #f95775;
     font-family: 'Quicksand', sans-serif;
     border-radius: 12px;
+    width: 20vw;
+    height: fit-content;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .20);
     justify-items: center;
     justify-content: center;

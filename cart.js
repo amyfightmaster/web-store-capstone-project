@@ -63,7 +63,7 @@ function validateFirstName(firstName) {
 }
 
 function validateLastName(lastName) {
-    const lastNameRegex = /^[A-Z][a-z]+$/;;  //allows only capital and lowercase letters, with first letter being capital//
+    const lastNameRegex = /^[A-Z][a-z]+$/;  //allows only capital and lowercase letters, with first letter being capital//
     return lastNameRegex.test(lastName);
 }
 
