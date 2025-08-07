@@ -32,6 +32,27 @@ if (addToCartButton) {
     }
 }
 
+if (plusButton) {
+    plusButton.disabled = !isLoggedIn;
+    if (!isLoggedIn) {
+        plusButton.title = "Log in to add items to your cart!"
+    }
+}
+
+if (minusButton) {
+    minusButton.disabled = !isLoggedIn;
+    if (!isLoggedIn) {
+        minusButton.title = "Log in to add items to your cart!"
+    }
+}
+
+if (quantityInput) {
+    quantityInput.disabled = !isLoggedIn;
+    if (!isLoggedIn) {
+        quantityInput.title = "Log in to add items to your cart!"
+    }
+}
+
 
 
 
@@ -53,7 +74,7 @@ if (productId === "1") {
     const colors = ["Red, Blue and White", "Blue and Purple", "Green, Blue and Yellow", "Orange and Black", "Yellow and Blue"];
 
     document.getElementById("product-name").textContent = "Tie-Dye T-shirt";
-    document.getElementById("product-description").textContent = "Available in sizes S, M, L, XL, 2X.  One of a kind, hand-dyed cotton shirt.";
+    document.getElementById("product-description").textContent = "Available in sizes S, M, L, XL, 2X and in multiple colors.  One of a kind, hand-dyed cotton shirt.  Once dyed, the shirts were cured for 24 hours to ensure that the tie-dye color lasts.";
     document.getElementById("product-price").textContent = "$25";
 
     document.getElementById("size-container").style.display = "block";
@@ -95,7 +116,7 @@ if (productId === "2") {
     const colors = ["Natural", "White"];
 
     document.getElementById("product-name").textContent = "Macramé Pot-hangers";
-    document.getElementById("product-description").textContent = "These sturdy macramé pot-hangers keep your plants suspended in style!  The pot is included.";
+    document.getElementById("product-description").textContent = "These sturdy macramé pot-hangers keep your plants suspended in style!  That way, you can hang them as you like, ensuring the best use of space and sunlight.  The pot-hangers are durable and have been tested.  The pot is included with the pot-hanger, as well.  Currently available in two colors.";
     document.getElementById("product-price").textContent = "$20";
 
     document.getElementById("color-container").style.display = "block";
@@ -129,8 +150,8 @@ if (productId === "3") {
     const colors = ["Purple", "Blue and Yellow", "Light Gray", "Pink", "Pink and Blue"];
 
     document.getElementById("product-name").textContent = "Macramé Keychains";
-    document.getElementById("product-description").textContent = "This keychain is perfect for securing your keys, and its vibrant colors draw the eye well (and also help you remember where you put your keys).";
-    document.getElementById("product-price").textContent = "$20";
+    document.getElementById("product-description").textContent = "With this handmade keychain, you can have both form and function.  This keychain is perfect for securing your keys, whether on your wrist, in your pocket, or in a bag!  The macramé loop is durable and eye-catching. With this, it will be rather more difficult to lose track of your keys.";
+    document.getElementById("product-price").textContent = "$15";
 
     document.getElementById("color-container").style.display = "block";
 
@@ -162,7 +183,7 @@ if (productId === "4") {
     const colors = ["Rainbow", "Red and Black", "Sherbert", "Pastel", "Orange"];
 
     document.getElementById("product-name").textContent = "Paracord Bracelets";
-    document.getElementById("product-description").textContent = "This stylish bracelet is sure to make a rugged statement.  Available in three sizes.";
+    document.getElementById("product-description").textContent = "This stylish bracelet is sure to make a rugged statement!  They currently close with a plastic buckle, so they are easy to put on and remove.  The bracelets are available in three sizes, as well as multiple colors.";
     document.getElementById("product-price").textContent = "$15";
 
     document.getElementById("size-container").style.display = "block";
@@ -200,11 +221,10 @@ if (productId === "4") {
 }
 
 if (productId === "5") {
-    const sizes = ["Baby"];
     const colors = ["Green White and Blue", "Yellow and White", "White", "Green and Orange", "Green"];
 
     document.getElementById("product-name").textContent = "Dreamcatchers";
-    document.getElementById("product-description").textContent = "These dreamcatchers are made using cotton yarn and other materials.  Available in 'baby' sizes, small, medium.";
+    document.getElementById("product-description").textContent = "These dreamcatchers are made using cotton yarn and other materials, such as pony beads and synthetic or natural feathers.  Available in 3-inch size and in multiple colors.  These dreamcatchers are a labor of love, and each one is prayed over so that the recipient might know peace and sweet dreams. (Please note, Handmade by Peg humbly asks that you not use the dreamcatchers as jewelry, as that is not the intended purpose of the item.)";
     document.getElementById("product-price").textContent = "$5";
 
     document.getElementById("size-container").style.display = "block";
@@ -245,7 +265,7 @@ if (productId === "6") {
     const colors = ["Tan and Brown", "Light Gray and Red", "Green and Red", "Green and Orange", "Pink and Purple"];
 
     document.getElementById("product-name").textContent = "Potholders";
-    document.getElementById("product-description").textContent = "These sturdy potholders are made from 100% cotton, meaning that they are both appealing and functional.";
+    document.getElementById("product-description").textContent = "These sturdy potholders are made from 100% cotton in a variety of colors and patterns.  They are handmade on a small loom using loops of cloth, and each one is unique.  Additionally, their composition as 100% cotton means that they will not melt at a certain temperature, unlike potholders made with synthetic fabrics.  These potholders have been hand-tested, and found to be both appealing and functional.";
     document.getElementById("product-price").textContent = "$15";
 
   document.getElementById("color-container").style.display = "block";
@@ -277,7 +297,7 @@ if (productId === "6") {
 if (productId === "7") {
     const colors = ["Yellow and Orange", "Blue", "Green", "Pink and Yellow", "Purple and Yellow"];
     document.getElementById("product-name").textContent = "Suncatchers";
-    document.getElementById("product-description").textContent = "These beaded suncatchers bring light and cheer, and the crystal upon the end reflects the sun's light.";
+    document.getElementById("product-description").textContent = "These beaded suncatchers bring light and cheer, and the crystal upon the end reflects the sun's light.  May of them are made with symbols of Peg's faith, or symbols of love and positivity such as the hearts.  We here at Handmade by Peg hope that these suncatchers might bring a little light to you, too!";
     document.getElementById("product-price").textContent = "$15";
 
    document.getElementById("color-container").style.display = "block";

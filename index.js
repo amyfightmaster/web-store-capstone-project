@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", () => {
+    updateLogin();
+});
+
 const loginButton = document.getElementById("loginButton");
 const logoutButton = document.getElementById("logout")
 const loginContainer = document.getElementById("login-container");
@@ -10,14 +14,21 @@ let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 let user = JSON.parse(localStorage.getItem("user")) || null; 
 
 //shows/hides login button and changes greeting based on whether user is logged in or guest//
+
+function updateLogin() {
+let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+let user = JSON.parse(localStorage.getItem("user")) || null; 
+
 if (isLoggedIn && user) {
     greeting.textContent = `Hello, ${user.username}!  Good to see you again!`;
     loginButton.style.display = "none";
     logoutButton.style.display = "block";
+    loginContainer.style.display = "none";
 } else {
     greeting.textContent = `Hello, Guest!  Please log in!`;
     loginButton.style.display = "block";
     logoutButton.style.display = "none";
+}
 }
 
 loginButton.addEventListener("click", showLogin);
@@ -30,11 +41,15 @@ function showLogin() {
     }
 }
 
+//logs user out when clicked//
+
 logoutButton.addEventListener("click", logoutUser);
 
 function logoutUser() {
         localStorage.removeItem("isLoggedIn");
         localStorage.removeItem("user");
+
+        updateLogin();
 
         greeting.textContent = `Hello, Guest!  Please log in!`;
         loginButton.style.display = "block";
@@ -57,6 +72,8 @@ loginForm.addEventListener("submit", async function (e) {
     const username = usernameInput.value;
     const password = passwordInput.value;
 
+    //fetch request to node.js server to allow login; utilizes username and password from dummyJSON user list//
+
     try {                                  //try-catch block to hopefully catch any sneaky errors//
         const response = await fetch('http://127.0.0.1:3000/login', {
             method: 'POST',
@@ -74,6 +91,8 @@ loginForm.addEventListener("submit", async function (e) {
             localStorage.setItem("isLoggedIn", "true");
             localStorage.setItem("user", JSON.stringify({ username }));
             greeting.textContent = `Hello, ${username}!  Good to see you again!`;
+
+            updateLogin();
         } else {
             alert("Login failed!")
         }
@@ -82,4 +101,5 @@ loginForm.addEventListener("submit", async function (e) {
         alert('It looks like something went wrong. Please try again.');
     }
 });
+
 
