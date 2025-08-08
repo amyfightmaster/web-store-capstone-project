@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Handmade by Peg</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
     Handmade by Peg
-       
+
+
+<!--Greeting changes if you're logged in or logged out. Very proud of login/logout system.-->       
 <p id="greeting">Hello, Guest!  Please log in!</p>  
 
 <button id="loginButton">Log In!</button>
@@ -18,6 +21,7 @@
 <button id="logout">Log Out</button>
     </header>
 
+    <!--Login container pops up when you click 'login' button under greeting, thanks to event listener-->
     <div id="login-container" style="display:none;">
         <h2>Log In Here!</h2>
         <form id="login-form">
@@ -41,6 +45,7 @@
         </form>
     </div>
 
+<!--Product cards will take user to product details page for that individual product when clicked. Wanted neat layout and also photos in case user isn't familiar with all item categories-->
     <section id="products">
         <div class="product-card">
             <div id="product-images-container"><img src="images/tiedye_shirt_4.jpeg"></div>

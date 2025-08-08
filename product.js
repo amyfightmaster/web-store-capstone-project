@@ -266,7 +266,7 @@ if (productId === "6") {
 
     document.getElementById("product-name").textContent = "Potholders";
     document.getElementById("product-description").textContent = "These sturdy potholders are made from 100% cotton in a variety of colors and patterns.  They are handmade on a small loom using loops of cloth, and each one is unique.  Additionally, their composition as 100% cotton means that they will not melt at a certain temperature, unlike potholders made with synthetic fabrics.  These potholders have been hand-tested, and found to be both appealing and functional.";
-    document.getElementById("product-price").textContent = "$15";
+    document.getElementById("product-price").textContent = "$10";
 
   document.getElementById("color-container").style.display = "block";
 
